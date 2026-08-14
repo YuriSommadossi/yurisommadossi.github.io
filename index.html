@@ -1,393 +1,531 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuri Sommadossi | Curriculum Vitae</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-:root {
-  --bg-color: #0b0f19;
-  --card-bg: #151c2e;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --primary: #38bdf8;
-  --primary-hover: #0284c7;
-  --border-color: #1e293b;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  line-height: 1.6;
-}
+  :root {
+    --bg-color: #0b0f19;
+    --card-bg: #151c2e;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #38bdf8;
+    --primary-hover: #0284c7;
+    --border-color: #1e293b;
+  }
 
-.container {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+  }
 
-/* HERO */
-.hero {
-  padding: 60px 0 40px;
-}
+  .container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-.hero-content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
+  /* HERO SECTION */
+  .hero {
+    padding: 60px 0 40px;
+  }
 
-.profile-img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--primary);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-}
-
-.badge {
-  background-color: rgba(56, 189, 248, 0.1);
-  color: var(--primary);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-
-.highlight {
-  color: var(--primary);
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--primary);
-  font-weight: 400;
-  margin-bottom: 12px;
-}
-
-.bio {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.btn {
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.btn.primary {
-  background-color: var(--primary);
-  color: #0b0f19;
-}
-
-.btn.primary:hover {
-  background-color: var(--primary-hover);
-  color: #fff;
-}
-
-.btn.secondary {
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  background-color: var(--card-bg);
-}
-
-.btn.secondary:hover {
-  border-color: var(--primary);
-}
-
-/* LINGUE BAR */
-.languages-bar {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 12px 20px;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.languages-bar strong {
-  color: var(--text-main);
-}
-
-/* SEZIONI */
-.section {
-  padding: 35px 0;
-  border-top: 1px solid var(--border-color);
-}
-
-.section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: var(--text-main);
-}
-
-/* CARDS */
-.card-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.card {
-  background-color: var(--card-bg);
-  padding: 22px;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-}
-
-.card .date {
-  font-size: 0.8rem;
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.card h3 {
-  font-size: 1.15rem;
-  margin-top: 2px;
-}
-
-.card h4 {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 400;
-  margin-bottom: 12px;
-}
-
-.card ul {
-  padding-left: 18px;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.card ul li {
-  margin-bottom: 6px;
-}
-
-.subtitle-card {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-/* SKILLS */
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill-tag {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.skill-tag.main {
-  border-color: rgba(56, 189, 248, 0.4);
-  color: var(--primary);
-  background-color: rgba(56, 189, 248, 0.05);
-}
-
-/* CONTATTI */
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.social-btn {
-  text-decoration: none;
-  color: var(--text-main);
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.social-btn.primary-btn {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.social-btn:hover:not(.static) {
-  background-color: var(--primary);
-  color: #0b0f19;
-}
-
-footer {
-  text-align: center;
-  padding: 30px 0;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  border-top: 1px solid var(--border-color);
-  margin-top: 30px;
-}
-
-/* RESPONSIVE PER CELLULARI */
-@media (max-width: 650px) {
   .hero-content {
-    flex-direction: column;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 35px;
   }
+
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+  }
+
+  .badge {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  .highlight {
+    color: var(--primary);
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--primary);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .bio {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+  }
+
   .cta-buttons {
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-}
-</style>
 
-<!-- HERO SECTION -->
-<header class="hero">
-  <div class="container hero-content">
-    <div class="profile-img-container">
-      <img src="foto.jpg" alt="Yuri Sommadossi" class="profile-img">
-    </div>
-    <div class="hero-text">
-      <span class="badge">Merano (BZ), Italia</span>
-      <h1>Yuri <span class="highlight">Sommadossi</span></h1>
-      <p class="subtitle">Tecnico Elettronico & Specialist Domotica / Smart Home</p>
-      <p class="bio">
-        Tecnico versatile specializzato nella progettazione, programmazione e manutenzione di impianti domotici avanzati (KNX, Loxone), sistemi antintrusione, antincendio e reti aziendali.
-      </p>
-      <div class="cta-buttons">
-        <a href="#contatti" class="btn primary">Contattami</a>
-        <a href="#esperienze" class="btn secondary">Esperienze & Certificazioni</a>
+  .btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn.primary {
+    background-color: var(--primary);
+    color: #0b0f19;
+  }
+
+  .btn.primary:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+  }
+
+  .btn.secondary {
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    background-color: var(--card-bg);
+  }
+
+  .btn.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  /* LINGUE BAR */
+  .languages-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .languages-bar strong {
+    color: var(--text-main);
+  }
+
+  /* SEZIONI */
+  .section {
+    padding: 35px 0;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .section h2 {
+    font-size: 1.55rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+
+  /* CARDS */
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+  }
+
+  .card .date {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+    margin-top: 2px;
+  }
+
+  .card h4 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .card ul {
+    padding-left: 18px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .card ul li {
+    margin-bottom: 6px;
+  }
+
+  .subtitle-card {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  /* SKILLS GROUP */
+  .skills-group {
+    margin-bottom: 22px;
+  }
+
+  .skills-group h3 {
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-tag {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .skill-tag.main {
+    border-color: rgba(56, 189, 248, 0.4);
+    color: var(--primary);
+    background-color: rgba(56, 189, 248, 0.05);
+  }
+
+  /* HOBBY & CHI SONO GRID */
+  .hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+  }
+
+  .hobby-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .hobby-card h3 {
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .hobby-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* CONTATTI */
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .social-btn {
+    text-decoration: none;
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-btn.primary-btn {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .social-btn:hover:not(.static) {
+    background-color: var(--primary);
+    color: #0b0f19;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px;
+  }
+
+  /* RESPONSIVE PER CELLULARI */
+  @media (max-width: 650px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .cta-buttons {
+      justify-content: center;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="profile-img-container">
+        <img src="foto.jpg" alt="Yuri Sommadossi" class="profile-img">
+      </div>
+      <div class="hero-text">
+        <span class="badge">Merano (BZ), Italia</span>
+        <h1>Yuri <span class="highlight">Sommadossi</span></h1>
+        <p class="subtitle">Tecnico Elettronico & Specialist Domotica / Smart Home / IoT</p>
+        <p class="bio">
+          Tecnico versatile, tenace e creativo con esperienza nella gestione di piattaforme IoT (ThingsBoard), domotica avanzata (KNX, Loxone), sistemi di sicurezza e impianti di automazione.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contatti" class="btn primary">Contattami</a>
+          <a href="#esperienze" class="btn secondary">Esperienze Lavorative</a>
+          <a href="#hobby" class="btn secondary">Chi Sono & Hobby</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container">
+  <main class="container">
 
-  <!-- LINGUE -->
-  <div class="languages-bar">
-    <span>🗣️ <strong>Lingue:</strong> Italiano (Madrelingua) | Inglese | Tedesco</span>
-  </div>
+    <!-- LINGUE -->
+    <div class="languages-bar">
+      <span>🗣️ <strong>Lingue:</strong> Italiano (Madrelingua) | Inglese | Tedesco</span>
+    </div>
 
-  <!-- ESPERIENZE LAVORATIVE -->
-  <section id="esperienze" class="section">
-    <h2>Esperienze Lavorative</h2>
-    <div class="card-grid">
+    <!-- ESPERIENZE LAVORATIVE -->
+    <section id="esperienze" class="section">
+      <h2>Esperienze Lavorative</h2>
+      <div class="card-grid">
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="date">Esperienza Recente</span>
+            <h3>Responsabile Tecnico Piattaforma ThingsBoard & IoT</h3>
+            <h4>YabeCoop</h4>
+          </div>
+          <ul>
+            <li>Gestione e amministrazione tecnica della piattaforma IoT ThingsBoard.</li>
+            <li>Programmazione e personalizzazione di Dashboard analitiche.</li>
+            <li>Sviluppo di Rule Chain avanzate ed automazioni per la gestione di allarmi e notifiche in tempo reale.</li>
+            <li>Ricerca e implementazione di soluzioni innovative per l'integrazione e il collegamento di sistemi domotici.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="date">09/2022 - 09/2022</span>
+            <h3>Tecnico Audio, Video e Domotica</h3>
+            <h4>AudioVisions — Merano</h4>
+          </div>
+          <ul>
+            <li>Manutenzione e gestione di impianti audio, video e domotica presso strutture turistiche.</li>
+            <li>Progettazione, installazione e consulenza su misura per gli impianti.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="date">09/2018 - 06/2022</span>
+            <h3>Tecnico Impianti & Responsabile Reparto</h3>
+            <h4>Elektroluce — Merano</h4>
+          </div>
+          <ul>
+            <li>Gestione completa dei reparti: Antintrusione, Antincendio e Domotica.</li>
+            <li>Programmazione, installazione e manutenzione impianti KNX, Loxone ed EL.MO SpA.</li>
+            <li>Manutenzione e gestione della rete internet aziendale e dei dispositivi smart avanzati.</li>
+            <li>Servizio clienti, diagnostica e riparazione di dispositivi elettronici e gestione dell'inventario.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="date">03/2017 - 04/2017 (Stage)</span>
+            <h3>Tecnico Impianti Automatizzati</h3>
+            <h4>ERICH HEIDRICH GmbH — Norimberga (Germania)</h4>
+          </div>
+          <ul>
+            <li>Manutenzione di impianti automatizzati, allarme e antincendio in contesto internazionale.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="date">10/2016 - 11/2016 (Stage)</span>
+            <h3>Manutenzione Termoidraulica ed Elettrica</h3>
+            <h4>Mazzini Mauro — Merano</h4>
+          </div>
+          <ul>
+            <li>Vendita e assistenza impianti di riscaldamento (caldaie, bruciatori) e condizionatori.</li>
+            <li>Manutenzione e riparazione di impianti elettrici ed elettroidraulici.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="date">06/2015 - 07/2015 (Stage)</span>
+            <h3>Stagista Elettricista</h3>
+            <h4>Corsini Davide — Merano</h4>
+          </div>
+          <ul>
+            <li>Supporto nelle attività operative di installazione e manutenzione di impianti elettrici.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FORMAZIONE & CORSI -->
+    <section class="section">
+      <h2>Formazione & Certificazioni</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Corsi di Specializzazione Tecnica</h3>
+          <ul>
+            <li><strong>Loxone Smart Home:</strong> Progettazione e applicazione di progetti complessi domotici.</li>
+            <li><strong>KNX ETS5:</strong> Configurazione, progettazione e manutenzione impianti KNX.</li>
+            <li><strong>EL.MO SpA:</strong> Corso pratico per configurazione e manutenzione centrali allarme/incendio.</li>
+            <li><strong>Abilitazioni Operative:</strong> Attestato utilizzo PLE e Corso Formazione Primo Soccorso.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Diploma di Scuola Secondaria II Livello (09/2014 - 05/2018)</h3>
+          <p class="subtitle-card">Tecnico Elettrico / Elettronico — Conduzione e manutenzione impianti automatizzati</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENZE (SKILLS) -->
+    <section class="section">
+      <h2>Competenze</h2>
       
-      <div class="card">
-        <div class="card-header">
-          <span class="date">09/2022 - 09/2022</span>
-          <h3>Tecnico Audio, Video e Domotica</h3>
-          <h4>AudioVisions — Merano</h4>
+      <div class="skills-group">
+        <h3>Competenze Informatiche e Tecniche</h3>
+        <div class="skills-wrapper">
+          <span class="skill-tag main">Competenze Informatiche Avanzate</span>
+          <span class="skill-tag main">Piattaforma ThingsBoard & IoT</span>
+          <span class="skill-tag main">Domotica KNX & Loxone</span>
+          <span class="skill-tag main">Sistemi Antintrusione & Antincendio</span>
+          <span class="skill-tag">Manutenzione e Installazione</span>
+          <span class="skill-tag">Diagnostica & Riparazione Elettronica</span>
+          <span class="skill-tag">Reti IT & Reti Aziendali</span>
+          <span class="skill-tag">Web Marketing & E-Commerce</span>
+          <span class="skill-tag">Patente B</span>
         </div>
-        <ul>
-          <li>Manutenzione impianti audio, video e domotica presso strutture turistiche.</li>
-          <li>Progettazione, installazione e consulenza dedicata agli impianti.</li>
-        </ul>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="date">09/2018 - 06/2022</span>
-          <h3>Tecnico Impianti & Responsabile Reparto</h3>
-          <h4>Elektroluce — Merano</h4>
+      <div class="skills-group">
+        <h3>Competenze Trasversali & Gestionali (Soft Skills)</h3>
+        <div class="skills-wrapper">
+          <span class="skill-tag">Leadership</span>
+          <span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">Creativo</span>
+          <span class="skill-tag">Tenace</span>
+          <span class="skill-tag">Versatile</span>
+          <span class="skill-tag">Servizio Clienti</span>
+          <span class="skill-tag">Ricerca Informazioni</span>
+          <span class="skill-tag">Team Management</span>
+          <span class="skill-tag">Self Management</span>
+          <span class="skill-tag">Team Work</span>
+          <span class="skill-tag">Brain Storming</span>
         </div>
-        <ul>
-          <li>Gestione dei reparti Antintrusione, Antincendio e Domotica.</li>
-          <li>Programmazione e manutenzione sistemi KNX, EL.MO e Loxone.</li>
-          <li>Manutenzione e gestione della rete internet aziendale ed apparecchiature IT.</li>
-          <li>Servizio clienti, diagnostica, riparazioni elettroniche e gestione inventario.</li>
-        </ul>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="date">03/2017 - 04/2017 (Stage)</span>
-          <h3>Tecnico Impianti Automatizzati</h3>
-          <h4>ERICH HEIDRICH GmbH — Norimberga (Germania)</h4>
+    <!-- CHI SONO E HOBBY -->
+    <section id="hobby" class="section">
+      <h2>Chi Sono & Interessi</h2>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <h3>💻 Tecnologia & Cybersecurity</h3>
+          <p>Hobby costante per la tecnologia, le nuove scoperte, l'informatica e la sicurezza informatica.</p>
         </div>
-        <ul>
-          <li>Manutenzione impianti automatizzati, allarme e antincendio in ambiente internazionale.</li>
-        </ul>
+        <div class="hobby-card">
+          <h3>🛒 Web Marketing & E-Commerce</h3>
+          <p>Gestione di negozi online, strategie di web marketing e sviluppo di soluzioni di vendita digitale.</p>
+        </div>
+        <div class="hobby-card">
+          <h3>🎨 Arte, Cinema & Musica</h3>
+          <p>Appassionato di cinema, espressione artistica e musica, fonti continue di ispirazione e crescita personale.</p>
+        </div>
+        <div class="hobby-card">
+          <h3>🤝 Attitudine Personale</h3>
+          <p>Mi adatto facilmente a nuovi contesti di lavoro. Lavoro bene sia individualmente che in gruppo con approccio orientato ai risultati.</p>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- FORMAZIONE & CORSI -->
-  <section class="section">
-    <h2>Formazione & Certificazioni</h2>
-    <div class="card-grid">
-      <div class="card highlight-card">
-        <h3>Corsi di Specializzazione Tecnica</h3>
-        <ul class="skills-list">
-          <li><strong>Loxone:</strong> Progettazione e applicazione di progetti complessi Smart Home.</li>
-          <li><strong>KNX ETS5:</strong> Manutenzione e progettazione impianti KNX.</li>
-          <li><strong>EL.MO SpA:</strong> Configurazione e manutenzione centrali allarme e antincendio.</li>
-          <li><strong>Certificazioni Operative:</strong> Utilizzo PLE & Primo Soccorso.</li>
-        </ul>
+    <!-- CONTATTI -->
+    <section id="contatti" class="section contact-section">
+      <h2>Mettiamoci in Contatto</h2>
+      <p>Sono sempre aperto a nuove opportunità lavorative, progetti stimolanti e collaborazioni.</p>
+      <div class="social-links">
+        <a href="mailto:yuriggita@gmail.com" class="social-btn primary-btn">✉️ yuriggita@gmail.com</a>
+        <a href="tel:+393313524005" class="social-btn">📞 +39 331 352 4005</a>
+        <span class="social-btn static">📍 Merano (BZ), Via Luis Zuegg 34</span>
       </div>
-      <div class="card">
-        <h3>Diploma di Scuola Secondaria II Livello</h3>
-        <p class="subtitle-card">Tecnico Elettrico / Elettronico — Conduzione e manutenzione impianti automatizzati</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SKILLS -->
-  <section class="section">
-    <h2>Competenze Chiave</h2>
-    <div class="skills-wrapper">
-      <span class="skill-tag main">Domotica KNX & Loxone</span>
-      <span class="skill-tag main">Sistemi Antintrusione & Antincendio</span>
-      <span class="skill-tag main">Reti IT & Reti Aziendali</span>
-      <span class="skill-tag">Diagnostica & Riparazione Elettronica</span>
-      <span class="skill-tag">Problem Solving</span>
-      <span class="skill-tag">Servizio Clienti & Consulenza</span>
-      <span class="skill-tag">Web Marketing & E-Commerce</span>
-      <span class="skill-tag">Cybersecurity & IT</span>
-      <span class="skill-tag">Patente B</span>
-    </div>
-  </section>
+  </main>
 
-  <!-- CONTATTI -->
-  <section id="contatti" class="section contact-section">
-    <h2>Mettiamoci in Contatto</h2>
-    <p>Sono sempre aperto a nuove sfide professionali, progetti tecnologici e collaborazioni.</p>
-    <div class="social-links">
-      <a href="mailto:yuriggita@gmail.com" class="social-btn primary-btn">✉️ yuriggita@gmail.com</a>
-      <a href="tel:+393313524005" class="social-btn">📞 +39 331 352 4005</a>
-      <span class="social-btn static">📍 Merano (BZ), Via Luis Zuegg 34</span>
-    </div>
-  </section>
+  <footer>
+    <p>© 2026 Yuri Sommadossi — Curriculum Vitae Digitale</p>
+  </footer>
 
-</main>
-
-<footer>
-  <p>© 2026 Yuri Sommadossi — Curriculum Vitae Digitale</p>
-</footer>
+</body>
+</html>
