@@ -304,34 +304,89 @@
     margin-top: 30px;
   }
 
-  /* STILI DEDICATI ALLA STAMPA / DOWNLOAD PDF */
+  /* ===================================================
+     STILI DEDICATI ALLA STAMPA E AL DOWNLOAD PDF (A4)
+     =================================================== */
+  @page {
+    size: A4;
+    margin: 12mm 15mm;
+  }
+
   @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
     body {
       background-color: #ffffff !important;
       color: #0f172a !important;
+      font-size: 10pt;
+    }
+
+    .container {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .hero {
+      padding: 10px 0 20px 0 !important;
     }
 
     .cta-buttons, footer {
       display: none !important;
     }
 
-    .card, .hobby-card, .languages-bar, .skill-tag {
+    .profile-img {
+      width: 130px !important;
+      height: 130px !important;
+      border-color: #0284c7 !important;
+      box-shadow: none !important;
+    }
+
+    .hero h1 {
+      font-size: 2rem !important;
+    }
+
+    .section {
+      padding: 20px 0 !important;
+      border-top: 1px solid #cbd5e1 !important;
+      break-inside: auto;
+    }
+
+    .card, .hobby-card, .languages-bar {
       background-color: #f8fafc !important;
       border: 1px solid #cbd5e1 !important;
       color: #0f172a !important;
+      padding: 14px !important;
+      break-inside: avoid !important; /* Evita di spezzare la card a metà pagina */
     }
 
     .skill-tag {
-      color: #334155 !important;
+      background-color: #f1f5f9 !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #1e293b !important;
+      padding: 5px 10px !important;
+      font-size: 0.8rem !important;
+    }
+
+    .card-grid {
+      gap: 12px !important;
+    }
+
+    .hobby-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 10px !important;
+    }
+
+    .skills-group {
+      break-inside: avoid !important;
+      margin-bottom: 15px !important;
     }
 
     .card ul, .card h4, .bio, .hobby-card p, .languages-bar, .subtitle-card {
       color: #334155 !important;
-    }
-
-    .profile-img {
-      border-color: #0284c7 !important;
-      box-shadow: none !important;
     }
 
     .highlight, .subtitle, .card .date, .hobby-card h3, .skills-group h3, .badge {
@@ -343,9 +398,12 @@
       background-color: #e0f2fe !important;
     }
 
-    .section {
-      border-top: 1px solid #e2e8f0 !important;
-      page-break-inside: avoid;
+    .social-btn {
+      background-color: #f8fafc !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+      padding: 6px 12px !important;
+      font-size: 0.85rem !important;
     }
   }
 
@@ -404,7 +462,7 @@
         
         <div class="card">
           <div class="card-header">
-            <span class="date">Esperienza Recente</span>
+            <span class="date">01/2023 - 06/2026</span>
             <h3>Responsabile Tecnico Piattaforma ThingsBoard & IoT</h3>
             <h4>YabeCoop</h4>
           </div>
