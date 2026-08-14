@@ -108,11 +108,14 @@
     font-weight: 600;
     font-size: 0.88rem;
     transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: inherit;
   }
 
   .btn.primary {
     background-color: var(--primary);
     color: #0b0f19;
+    border: none;
   }
 
   .btn.primary:hover {
@@ -301,6 +304,51 @@
     margin-top: 30px;
   }
 
+  /* STILI DEDICATI ALLA STAMPA / DOWNLOAD PDF */
+  @media print {
+    body {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+
+    .cta-buttons, footer {
+      display: none !important;
+    }
+
+    .card, .hobby-card, .languages-bar, .skill-tag {
+      background-color: #f8fafc !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    .skill-tag {
+      color: #334155 !important;
+    }
+
+    .card ul, .card h4, .bio, .hobby-card p, .languages-bar, .subtitle-card {
+      color: #334155 !important;
+    }
+
+    .profile-img {
+      border-color: #0284c7 !important;
+      box-shadow: none !important;
+    }
+
+    .highlight, .subtitle, .card .date, .hobby-card h3, .skills-group h3, .badge {
+      color: #0284c7 !important;
+    }
+
+    .badge {
+      border-color: #0284c7 !important;
+      background-color: #e0f2fe !important;
+    }
+
+    .section {
+      border-top: 1px solid #e2e8f0 !important;
+      page-break-inside: avoid;
+    }
+  }
+
   /* RESPONSIVE PER CELLULARI */
   @media (max-width: 650px) {
     .hero-content {
@@ -333,9 +381,10 @@
           Tecnico versatile, tenace e creativo con esperienza nella gestione di piattaforme IoT (ThingsBoard), domotica avanzata (KNX, Loxone), sistemi di sicurezza e impianti di automazione.
         </p>
         <div class="cta-buttons">
-          <a href="#contatti" class="btn primary">Contattami</a>
+          <button onclick="window.print()" class="btn primary">📄 Scarica PDF</button>
           <a href="#esperienze" class="btn secondary">Esperienze Lavorative</a>
           <a href="#hobby" class="btn secondary">Chi Sono & Hobby</a>
+          <a href="#contatti" class="btn secondary">Contattami</a>
         </div>
       </div>
     </div>
@@ -524,7 +573,7 @@
   </main>
 
   <footer>
-    <p>© 2026 Yuri Sommadossi — Curriculum Vitae Online</p>
+    <p>© 2026 Yuri Sommadossi — Curriculum Vitae Digitale</p>
   </footer>
 
 </body>
